@@ -1,0 +1,14 @@
+﻿_subdirectory: {{project_slug}}
+_templates_suffix: .jinja
+_jinja_extensions:
+- copier_templates_extensions.TemplateExtensionLoader
+- extensions.py:GitExtension
+- extensions.py:SlugifyExtension
+
+project_name:
+    type: str
+    help: What is your project name?
+
+project_slug:
+    type: str
+    default: "{{ project_name | slugify('_') }}"
